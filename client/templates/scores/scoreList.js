@@ -12,7 +12,7 @@ Template.scoreList.events({
   "click .add-score": function (event, template) {
     
     var scoreInput =  document.getElementById("score-input");
-    var score = scoreInput.Value;
+    var score = scoreInput.value;
 	
     if(!isNaN(score)) { 
       Meteor.call('scoreInsert', Number(score), function(error, result) {

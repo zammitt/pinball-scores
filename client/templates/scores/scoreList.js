@@ -21,7 +21,7 @@ Template.scoreList.events({
           return swal({ type: "error", title: error.reason });
         } else { 
           swal({type: "success", title: "Score added sucessfully!" });
-		  scoreInput.Value = '';
+		  scoreInput.value = '';
         }
       });
     }

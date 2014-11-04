@@ -5,7 +5,7 @@
 
 .scores .panel,
 .scores .input-group {
-   max-width: 300px;
+   max-width: 450px;
    margin: 10px auto 0 auto;
 }
 
@@ -28,6 +28,11 @@
   position: relative;
   left: 60px;
   top: 15px;
+}
+
+.scores .panel-success{
+	border: 5px;
+	font-weight: bold;
 }
 
 input[type='number'] {

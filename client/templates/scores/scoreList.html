@@ -1,0 +1,16 @@
+<template name="scoreList">
+  <div class="scores">
+     {{#if currentUser}}
+      <div class="input-group">
+        <input type="text" id="score-input" class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-success add-score" type="button">Add Score</button>
+        </span>
+      </div><!-- /input-group -->
+    {{/if}}
+    <h1>High Scores</h1>
+    {{#each scores}}
+      {{> scoreItem}}
+    {{/each}}
+  </div>
+</template>

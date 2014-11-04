@@ -1,0 +1,10 @@
+<template name="scoreItem">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <span class="rank">#{{index}}</span><br />
+      <span class="score">{{ score.toLocaleString }}</span><br />
+      <span class="name">{{name}}</span>
+      <span class="date">{{ formatDate submitted "short" }}</span>
+    </div>
+  </div>
+</template>

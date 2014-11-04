@@ -31,7 +31,7 @@
 }
 
 .scores .panel-success{
-	border: 5px;
+	border-width: 5px;
 	font-weight: bold;
 }
 

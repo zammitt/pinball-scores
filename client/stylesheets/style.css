@@ -25,11 +25,11 @@ body {
 }
 
 .scores .panel .avatar {
- float:right;
+ padding:15px 0 0 14px;
 }
 
 .scores .panel .score {
-  margin: 10px 0 5px 0;
+  margin: 25px 0 5px 0;
   display: block;
   text-align:center;
 }

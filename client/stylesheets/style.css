@@ -24,6 +24,11 @@ body {
   font-size: 15px;
 }
 
+.scores .panel .score {
+  margin: 10px 0;
+  display: inline-block;
+}
+
 .scores .panel .name {
   float:left;
   font-size:15px;
@@ -35,8 +40,16 @@ body {
 }
 
 .scores .panel-success{
-	border-width: 5px;
+	border-width: 4px;
 	font-weight: bold;
+}
+
+.scores .panel-success .panel-body {
+  padding: 3px 15px;
+}
+
+.scores .panel-success .panel-body {
+  padding: 3px 12px;
 }
 
 input[type='number'] {

@@ -24,9 +24,14 @@ body {
   font-size: 15px;
 }
 
+.scores .panel .avatar {
+ float:right;
+}
+
 .scores .panel .score {
-  margin: 0 0 10px 0;
-  display: inline-block;
+  margin: 10px 0 5px 0;
+  display: block;
+  text-align:center;
 }
 
 .scores .panel .name {

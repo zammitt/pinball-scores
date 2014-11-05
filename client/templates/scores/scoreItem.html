@@ -1,8 +1,10 @@
 <template name="scoreItem">
   <div class="panel {{#if ownScore}}panel-success{{else}}panel-default{{/if}}">
     <div class="panel-body">
-      <span class="rank">#{{index}}</span><br />
-      <span class="score">{{ score.toLocaleString }}</span><br />
+      <span class="rank">#{{index}}</span>
+      <span class="avatar"><img src="{{ avatar }}" alt="user img" width="30" /></span>  
+      <br />
+      <span class="score">{{ score.toLocaleString }}</span>
       <span class="name">{{name}}</span>
       <span class="date">{{ formatDate submitted }}</span>
     </div>

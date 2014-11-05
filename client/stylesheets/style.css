@@ -31,7 +31,7 @@ body {
 .scores .panel .score {
   margin: 25px 0 5px 0;
   display: block;
-  text-align:center;
+  text-align:left;
 }
 
 .scores .panel .name {

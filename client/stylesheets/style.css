@@ -4,7 +4,7 @@ body {
 }
 
 .main-container {
-  padding: 40px 15px;
+  padding: 20px 15px;
   text-align: center;
 }
 
@@ -44,12 +44,12 @@ body {
 	font-weight: bold;
 }
 
-.scores .panel-success .panel-body {
-  padding: 3px 15px;
+.scores .panel-default .panel-body {
+  padding: 6px 15px;
 }
 
 .scores .panel-success .panel-body {
-  padding: 3px 12px;
+  padding: 3px 15px;
 }
 
 input[type='number'] {

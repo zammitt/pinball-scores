@@ -1,3 +1,13 @@
+
+body {
+  padding-top: 60px;
+}
+
+.main-container {
+  padding: 40px 15px;
+  text-align: center;
+}
+
 .scores {
   text-align:center;
   font-size:20px;
@@ -10,24 +20,18 @@
 }
 
 .scores .panel .rank {
-  position: relative;
-  left: -131px;
-  top: -15px;
+  float:left;
   font-size: 15px;
 }
 
 .scores .panel .name {
-  position: relative;
-  top: 15px;
-  left: -60px;
+  float:left;
   font-size:15px;
 }
 
 .scores .panel .date {
   font-size: 15px;
-  position: relative;
-  left: 60px;
-  top: 15px;
+  float:right;
 }
 
 .scores .panel-success{

@@ -1,0 +1,26 @@
+<template name="highScores">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+       {{> scoreAdd }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <h1>All Time</h1>
+      {{> scoreList allTime }}
+    </div>
+    <div class="col-md-3">
+      <h1>This Month</h1>
+      {{> scoreList thisMonth }}
+    </div>
+    <div class="col-md-3">
+      <h1>This Week</h1>
+      {{> scoreList thisWeek }}
+    </div>
+    <div class="col-md-3">
+      <h2>My Scores</h2>
+      {{> scoreList myScores }}
+    </div>
+  </div>
+  
+</template>

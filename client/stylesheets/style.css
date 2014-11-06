@@ -7,6 +7,10 @@ table th {
   text-align:center;
 }
 
+#score-add {
+  margin-top:25px;
+}
+
 .main-container {
   padding: 20px 15px;
   text-align: center;

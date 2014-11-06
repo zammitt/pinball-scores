@@ -19,9 +19,7 @@ Template.myScores.events({
 Template.myScores.helpers({
   myScores: function() {
     var userId = Meteor.userId();
-    return Scores.find({ userId: userId }, {sort: {score: -1} }).map(function(doc, index, cursor) {
-      return _.extend(doc, {index: index + 1});
-    });
+    return Scores.find({ userId: userId }, {sort: {score: -1} });
   },
   settings: function() {
     return {
@@ -30,10 +28,7 @@ Template.myScores.helpers({
       rowsPerPage: 100,
       useFontAwesome: true, 
       fields: [
-        { key: 'index', label: 'Rank', sort: 'ascending' },
-        { key: 'score', label: 'Score', fn: function(value, object) {
-          return value.toLocaleString();
-        }},
+        { key: 'score', label: 'Score', sort: 'descending'},
         { key: 'submitted', label: 'Date', fn: function(value, object) {
           return moment(value).format('MM/DD/YYYY');
         }},

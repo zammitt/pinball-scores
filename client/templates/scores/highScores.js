@@ -28,6 +28,18 @@ Template.highScores.helpers({
     });
     return scores;
   },
+  today: function() {
+    var date = new Date();
+    date.setSeconds(0);
+    date.setMinutes(0);
+    date.setHours(0);
+    
+    var scores = Scores.find({submitted: {$gte: date }}, {sort: {score: -1}, limit: 10}).map(function(doc, index, cursor) {
+      var score = _.extend(doc, {index: index + 1});
+      return score;
+    });
+    return scores;
+  },
   myScores:  function() {
     var userId = Meteor.userId();
     var scores = Scores.find({userId: userId}, {sort: {score: -1}, limit: 10}).map(function(doc, index, cursor) {

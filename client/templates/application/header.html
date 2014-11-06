@@ -8,13 +8,20 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{pathFor 'postsList'}}"><img src='/laser-cue-logo.png' alt='laser cue' /></a>
+        <a class="navbar-brand" href="{{pathFor 'highScores'}}"><img src='/laser-cue-logo.png' alt='laser cue' /></a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="/Laser Cue Instruction Manual.pdf" target="_blank">Manual</a></li>
-          <li><a href="http://www.ipdb.org/machine.cgi?id=1414" target="_blank">IPDB</a></li>
-          <li><a href="https://github.com/zammitt/pinball-scores" target="_blank">GitHub</a></li>
+          <li><a href="{{ pathFor 'highScores' }}">High Scores</a></li>
+          <li><a href="{{ pathFor 'myScores' }}">My Scores</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Links <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/Laser Cue Instruction Manual.pdf" target="_blank">Manual</a></li>
+              <li><a href="http://www.ipdb.org/machine.cgi?id=1414" target="_blank">IPDB</a></li>
+              <li><a href="https://github.com/zammitt/pinball-scores" target="_blank">GitHub</a></li>
+            </ul>
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           {{> loginButtons}}

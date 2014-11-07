@@ -15,4 +15,6 @@ aslagle:reactive-table
 natestrauser:font-awesome
 jquery
 iron:router
+meteorhacks:kadira
+meteorhacks:fast-render@2.0.0-rc1
 

@@ -7,7 +7,9 @@
           <h4 class="modal-title">{{ name }}: {{ score.toLocaleString }}</h4>
         </div>
         <div class="modal-body">
-          {{> commentForm }}
+          {{#if currentUser}}
+            {{> commentForm }}
+          {{/if}}
 			  	{{> scoreComments}}
         </div>
       </div><!-- /.modal-content -->

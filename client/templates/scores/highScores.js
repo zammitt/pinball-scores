@@ -47,5 +47,10 @@ Template.highScores.helpers({
       return score;
     });
     return scores;
+  },
+  selectedScore: function() {
+    var scoreId = Session.get('selectedScoreId');
+    var score  = Scores.findOne({_id: scoreId})
+    return score;
   }
 });

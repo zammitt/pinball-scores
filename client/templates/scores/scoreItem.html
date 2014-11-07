@@ -7,9 +7,10 @@
         </div>
         <div class="col-xs-9">
           <span class="rank">#{{index}}</span> 
-          <span class="date">{{ formatDate submitted }}</span>
+          <span class="date">{{ formatDate submitted "MM/DD/YYYY" }}</span>
           <span class="score">{{ score.toLocaleString }}</span>
           <span class="name">{{name}}</span>
+          <span class="comment-count"><i class="fa fa-comments-o"></i> {{ commentCount _id }}</span>
         </div>
       </div>
     </div>

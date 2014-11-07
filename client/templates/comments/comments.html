@@ -1,0 +1,28 @@
+
+<template name="scoreComments">
+    <div class="comments">
+        {{#if CommentsByDoc _id}}
+            <hr/>
+            {{#each CommentsByDoc _id}}
+                    {{> scoreComment}}
+            {{/each}}
+        {{else}}
+            {{> noComments}}
+        {{/if}}
+    </div>
+</template>
+
+<template name="scoreComment">
+	<div class="panel panel-default comment">
+    <div class="panel-body">
+      <div class="pull-left">
+        <img src="{{ avatar }}" alt="user img" class="img-responsive comment-avatar" />
+        <span>{{user.profile.name}}</span>
+      </div>
+      <div class="media-body">
+        <p>Posted At: {{ formatDate createdAt "MM/DD/YYYY h:mm:ss a" }}</p>
+        <p><strong>{{content}}</strong></p>
+      </div>
+    </div>
+	</div>
+</template>

@@ -3,5 +3,5 @@ Meteor.publish('scores', function() {
 });
 
 Meteor.publish('users', function() {
-  return Users.find();
+  return Meteor.users.find({});
 });

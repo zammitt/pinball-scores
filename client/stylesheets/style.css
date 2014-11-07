@@ -21,6 +21,23 @@ table th {
   font-size:20px;
 }
 
+.scores .panel {
+  cursor: pointer;
+}
+
+.comment-avatar {
+  width: 90px;
+}
+.comment .pull-left {
+  text-align:center;
+}
+.comment .media-body {
+  text-align:left;
+  margin-left:100px;
+}
+#commentForm {
+  text-align: left;
+}
 .scores .panel,
 .scores .input-group {
    max-width: 450px;
@@ -34,6 +51,11 @@ table th {
 
 .scores .panel .avatar {
  padding:15px 0 0 14px;
+}
+
+.scores .panel .comment-count {
+  float:right;
+  font-size:15px;
 }
 
 .scores .panel .score {

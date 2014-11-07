@@ -1,0 +1,16 @@
+<template name="scoreModal">
+  <div class="modal fade" id="score-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title">{{ name }}: {{ score.toLocaleString }}</h4>
+        </div>
+        <div class="modal-body">
+          {{> commentForm }}
+			  	{{> scoreComments}}
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</template>

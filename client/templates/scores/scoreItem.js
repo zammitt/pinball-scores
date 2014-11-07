@@ -16,3 +16,10 @@ Template.scoreItem.helpers({
     return Session.get(this.userId + "_avatar");
   }
 });
+
+Template.scoreItem.events({
+  "click .panel": function(evt, template) {
+    Session.set("selectedScoreId", template.data._id);
+    $("#score-modal").modal();
+  }
+})

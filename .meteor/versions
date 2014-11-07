@@ -1,6 +1,9 @@
 accounts-base@1.1.2
 accounts-google@1.0.2
 accounts-oauth@1.1.2
+aldeed:autoform@4.0.0
+aldeed:collection2@2.2.0
+aldeed:simple-schema@1.1.0
 anti:i18n@0.4.3
 application-configuration@1.0.3
 aslagle:reactive-table@0.5.5
@@ -13,6 +16,7 @@ boilerplate-generator@1.0.1
 callback-hook@1.0.1
 check@1.0.2
 chuangbo:cookie@1.1.0
+coffeescript@1.0.4
 ctl-helper@1.0.4
 ctl@1.0.2
 ddp@1.0.11
@@ -41,6 +45,7 @@ jquery@1.0.1
 json@1.0.1
 kevohagan:sweetalert@0.3.1
 launch-screen@1.0.0
+less@1.0.11
 livedata@1.0.11
 localstorage@1.0.1
 logging@1.0.5
@@ -81,3 +86,5 @@ underscore@1.0.1
 url@1.0.2
 webapp-hashing@1.0.1
 webapp@1.1.4
+yogiben:comments@0.0.7
+yogiben:user-helpers@0.0.1

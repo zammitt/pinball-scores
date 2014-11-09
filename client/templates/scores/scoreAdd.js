@@ -6,7 +6,7 @@ var scoreAdd = function() {
       swal({ type: "error", title: "Invalid Score!", text: "Score must be a positive number" });
       return;
     }
-    Meteor.call('scoreInsert', score, function(error, result) {
+    Meteor.call('scoreInsert', score, Session.get("currentGame"), function(error, result) {
       // display the error to the user and abort
       if (error) {
         return swal({ type: "error", title: error.reason });

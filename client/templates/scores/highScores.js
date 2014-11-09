@@ -1,4 +1,4 @@
-Session.set("scoreSort", -1)
+Session.set("scoreSort", -1);
 
 Template.highScores.events({
   "click #show-low-scores": function(event, template) {
@@ -10,12 +10,17 @@ Template.highScores.events({
     Session.set("scoreSort", -1);
     $("#show-high-scores").parent().addClass("active");
     $("#show-low-scores").parent().removeClass("active");
+  },
+  "click .game-switcher": function(event, template) {
+    Session.set("currentGame", $(event.currentTarget).attr("data-game-id"));
+    $(".game-switcher").removeClass("active");
+    $(event.currentTarget).addClass("active");
   }
 });
 
 Template.highScores.helpers({
-  allTime: function() {
-    var scores = Scores.find({}, {sort: {score: Session.get("scoreSort")}, limit: 10}).map(function(doc, index, cursor) {
+  allTime: function() {  
+    var scores = Scores.find({ game: Session.get("currentGame") }, {sort: {score: Session.get("scoreSort")}, limit: 10}).map(function(doc, index, cursor) {
       var score = _.extend(doc, {index: index + 1});
       return score;
     });
@@ -26,7 +31,7 @@ Template.highScores.helpers({
     var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
     var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
     
-    var scores = Scores.find({submitted: {$gte: firstDay, $lt: lastDay }}, {sort: {score: Session.get("scoreSort")}, limit: 10}).map(function(doc, index, cursor) {
+    var scores = Scores.find({game: Session.get("currentGame"), submitted: {$gte: firstDay, $lt: lastDay }}, {sort: {score: Session.get("scoreSort")}, limit: 10}).map(function(doc, index, cursor) {
       var score = _.extend(doc, {index: index + 1});
       return score;
     });
@@ -37,7 +42,7 @@ Template.highScores.helpers({
     var firstDay = new Date(date.setDate(date.getDate() - date.getDay()));
     var lastDay = new Date(date.setDate(date.getDate() - date.getDay()+6));
     
-    var scores = Scores.find({submitted: {$gte: firstDay, $lt: lastDay }}, {sort: {score: Session.get("scoreSort")}, limit: 10}).map(function(doc, index, cursor) {
+    var scores = Scores.find({game: Session.get("currentGame"), submitted: {$gte: firstDay, $lt: lastDay }}, {sort: {score: Session.get("scoreSort")}, limit: 10}).map(function(doc, index, cursor) {
       var score = _.extend(doc, {index: index + 1});
       return score;
     });
@@ -49,7 +54,7 @@ Template.highScores.helpers({
     date.setMinutes(0);
     date.setHours(0);
     
-    var scores = Scores.find({submitted: {$gte: date }}, {sort: {score: Session.get("scoreSort")}, limit: 10}).map(function(doc, index, cursor) {
+    var scores = Scores.find({game: Session.get("currentGame"), submitted: {$gte: date }}, {sort: {score: Session.get("scoreSort")}, limit: 10}).map(function(doc, index, cursor) {
       var score = _.extend(doc, {index: index + 1});
       return score;
     });
@@ -57,11 +62,20 @@ Template.highScores.helpers({
   },
   myScores:  function() {
     var userId = Meteor.userId();
-    var scores = Scores.find({userId: userId}, {sort: {score: Session.get("scoreSort")}, limit: 10}).map(function(doc, index, cursor) {
+    var scores = Scores.find({game: Session.get("currentGame") , userId: userId}, {sort: {score: Session.get("scoreSort")}, limit: 10}).map(function(doc, index, cursor) {
       var score = _.extend(doc, {index: index + 1});
       return score;
     });
     return scores;
+  },
+  games: function() {
+    return Games.find().map(function(doc, index, cursor) {
+      var game = _.extend(doc, { active: Session.get("currentGame") === doc._id });
+      return game;
+    });
+  },
+  backglass: function() {
+    return Games.findOne({ _id: Session.get("currentGame")}).backglass;
   },
   selectedScore: function() {
     var scoreId = Session.get('selectedScoreId');

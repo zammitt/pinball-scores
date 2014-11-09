@@ -19,7 +19,7 @@ Template.myScores.events({
 Template.myScores.helpers({
   myScores: function() {
     var userId = Meteor.userId();
-    return Scores.find({ userId: userId }, {sort: {score: -1} });
+    return Scores.find({ userId: userId, game: Session.get("currentGame") }, {sort: {score: -1} });
   },
   settings: function() {
     return {

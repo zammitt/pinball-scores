@@ -1,5 +1,5 @@
 if(Games.find().count() === 0) {
-  var laserCueId = Games.insert({
+  Games.insert({
     name: 'Laser Cue',
     logo: '/laser-cue-logo.png',
     backglass: '/thedudes.jpg'
@@ -10,6 +10,4 @@ if(Games.find().count() === 0) {
     logo: '/wwlogo.gif',
     backglass: '/ww_backglass.jpg'
   });
-  
-  Scores.update({}, {$set: { game: laserCueId }}, false, true);
 }

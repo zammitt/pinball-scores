@@ -10,11 +10,6 @@ Template.highScores.events({
     Session.set("scoreSort", -1);
     $("#show-high-scores").parent().addClass("active");
     $("#show-low-scores").parent().removeClass("active");
-  },
-  "click .game-switcher": function(event, template) {
-    Session.set("currentGame", $(event.currentTarget).attr("data-game-id"));
-    $(".game-switcher").removeClass("active");
-    $(event.currentTarget).addClass("active");
   }
 });
 
@@ -67,12 +62,6 @@ Template.highScores.helpers({
       return score;
     });
     return scores;
-  },
-  games: function() {
-    return Games.find().map(function(doc, index, cursor) {
-      var game = _.extend(doc, { active: Session.get("currentGame") === doc._id });
-      return game;
-    });
   },
   backglass: function() {
     return Games.findOne({ _id: Session.get("currentGame")}).backglass;

@@ -1,7 +1,9 @@
 <template name="scoreList">
   <div class="scores">
-    {{#each this}}
-      {{> scoreItem}}
-    {{/each}}
+      {{#each this}}
+        {{> scoreItem}}
+      {{else}}
+        <div class="alert alert-info">No Scores</div>
+      {{/each}}
   </div>
 </template>

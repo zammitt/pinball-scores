@@ -3,13 +3,9 @@ Session.set("scoreSort", -1);
 Template.highScores.events({
   "click #show-low-scores": function(event, template) {
     Session.set("scoreSort", 1);
-    $("#show-low-scores").parent().addClass("active");
-    $("#show-high-scores").parent().removeClass("active");
   },
   "click #show-high-scores": function(event, template) {
     Session.set("scoreSort", -1);
-    $("#show-high-scores").parent().addClass("active");
-    $("#show-low-scores").parent().removeClass("active");
   }
 });
 
@@ -70,5 +66,11 @@ Template.highScores.helpers({
     var scoreId = Session.get('selectedScoreId');
     var score  = Scores.findOne({_id: scoreId})
     return score;
+  },
+  highScoreActive: function() {
+    return Session.get("scoreSort") === -1;
+  },
+  lowScoreActive: function () {
+    return Session.get("scoreSort") === 1;
   }
 });
